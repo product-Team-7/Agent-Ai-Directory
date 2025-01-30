@@ -11,11 +11,8 @@
   "dependencies": {
     "@radix-ui/react-select": "^2.1.5",
     "clsx": "^2.1.1",
-<<<<<<< HEAD
     "framer-motion": "^12.0.6",
-=======
     "dotenv": "^16.4.7",
->>>>>>> 4ea0e16698be4bb7f1f41711586ca9b3e4a04c87
     "lucide-react": "^0.474.0",
     "mongoose": "^8.9.5",
     "next": "15.1.6",
