@@ -65,7 +65,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6 border-t pt-8 border-white/10">
+        <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-white/10">
           <div className="flex flex-wrap justify-center md:justify-start gap-6">
             <Link
               href="/privacy"
