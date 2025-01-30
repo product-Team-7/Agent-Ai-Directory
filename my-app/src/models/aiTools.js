@@ -18,6 +18,7 @@ const AiToolSchema = new mongoose.Schema(
     logo: { type: String },
     thumbnailImage: { type: String },
     videoUrl: { type: String },
+    promotion : {type : Boolean, default : false}
   },
   { timestamps: true }
 );
