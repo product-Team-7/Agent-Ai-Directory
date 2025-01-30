@@ -5,11 +5,11 @@ import { NextResponse } from "next/server";
 export async function GET(req, { params }) {
     await dbConnect();
     try {
-        // const {params} = await category
         // const { promotion} = await params
         const tool = await AiTool.find({
-            promotion: "true"
+            promotion: true
         });
+        // console.log(tool)
 
         if (!tool) {
             return NextResponse.json({ error: "Tool Not Found" }, { status: 404 });
