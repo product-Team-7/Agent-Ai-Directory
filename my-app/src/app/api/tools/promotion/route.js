@@ -8,7 +8,7 @@ export async function GET(req, { params }) {
         // const { promotion} = await params
         const tool = await AiTool.find({
             promotion: true
-        });
+        }, "logo name");
         // console.log(tool)
 
         if (!tool) {
