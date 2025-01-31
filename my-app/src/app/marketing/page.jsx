@@ -1,8 +1,6 @@
 import { Search } from "lucide-react"
 import { ToolCard } from "@/components/tool-card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
 
 export default function MarketingPage() {
 
@@ -83,7 +81,6 @@ export default function MarketingPage() {
 
   return (
     <div className="min-h-screen bg-black">
-      <Navbar />
 
       {/* Hero section with smaller height */}
       <div className="relative min-h-[300px] flex flex-col items-center justify-center text-center px-4 overflow-hidden hero2-background">
@@ -163,7 +160,6 @@ export default function MarketingPage() {
         </div>
       </main>
 
-      <Footer />
     </div>
   )
 }

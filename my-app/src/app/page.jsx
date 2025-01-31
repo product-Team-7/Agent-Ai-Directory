@@ -1,8 +1,6 @@
 import { Suspense } from "react"
 import { Hero } from "@/components/hero"
 import { ToolCard } from "@/components/tool-card"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import InfiniteScroll from "@/components/infinite-scroll"
 import Link from "next/link"
@@ -42,7 +40,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black">
-      <Navbar />
       <Suspense fallback={<div className="min-h-[600px] bg-black" />}>
         <Hero />
       </Suspense>
@@ -94,7 +91,7 @@ export default function Home() {
         </div>
 
         {categories.map((category) => (
-          <div key={category.name} className="mb-12">
+          <div key={category.name} className="mb-12 p-5">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-2">
                 <h2 className="text-white text-2xl font-semibold">{category.name}</h2>
@@ -122,7 +119,6 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }
