@@ -177,15 +177,7 @@ export default function ProductDetails({ productData }) {
               </div>
             )}
 
-            {/* Similar Tools */}
-            <div className="mt-16 lg:mt-24">
-              <h2 className="text-2xl font-bold text-white mb-8">Similar Tools</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {similarTools.map((tool) => (
-                  <ToolCard key={tool.name} {...tool} />
-                ))}
-              </div>
-            </div>
+          
           </div>
 
           {/* Sidebar */}
@@ -286,6 +278,16 @@ export default function ProductDetails({ productData }) {
             </div>
           </div>
         </div>
+
+          {/* Similar Tools */}
+          <div className="mt-16 lg:mt-24">
+              <h2 className="text-2xl font-bold text-white mb-8">Similar Tools</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {similarTools.map((tool) => (
+                  <ToolCard key={tool.name} {...tool} />
+                ))}
+              </div>
+            </div>
       </main>
 
     </div>
