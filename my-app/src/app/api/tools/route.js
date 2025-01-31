@@ -15,7 +15,7 @@ export async function GET(req) {
 
     // Fetch tools with pagination
     const tools = await AiTool.find().skip(skip).limit(limit);
-    const total = await AiTool.countDocuments();
+    // const total = await AiTool.countDocuments();
 
     return NextResponse.json({
     //   total,

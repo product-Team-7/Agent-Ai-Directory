@@ -12,13 +12,13 @@ const AiToolSchema = new mongoose.Schema(
     twitter: { type: String },
     github: { type: String },
     tagline: { type: String },
-    discription: {type : String },
+    discription: { type: String },
     keyFeatures: { type: [String], default: [] },
     useCases: { type: [String], default: [] },
-    logo: { type: String },
+    logo: { type: String, default: 'https://res.cloudinary.com/dxzidv0lk/image/upload/v1738305060/logos/ai-or-not.png' },
     thumbnailImage: { type: String },
     videoUrl: { type: String },
-    promotion : {type : Boolean, default : false}
+    promotion: { type: Boolean, default: false }
   },
   { timestamps: true }
 );
