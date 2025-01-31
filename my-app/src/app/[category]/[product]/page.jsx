@@ -2,8 +2,6 @@
 
 import Link from "next/link"
 import { ArrowLeft, ExternalLink, Heart } from 'lucide-react'
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
 import { ToolCard } from "@/components/tool-card"
 import Image from "next/image";
 import logo2 from "../../../../public/chat-writer.png";
@@ -71,7 +69,6 @@ export default function ProductPage({ params }) {
 
   return (
     <div className="min-h-screen bg-black">
-      <Navbar />
 
       <main className="container mx-auto px-4 md:px-6 py-8 max-w-7xl">
         {/* Breadcrumb */}
@@ -228,7 +225,6 @@ export default function ProductPage({ params }) {
             </div>
       </main>
 
-      <Footer />
     </div>
   )
 }
