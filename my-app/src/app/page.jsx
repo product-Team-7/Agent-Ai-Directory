@@ -140,7 +140,7 @@ export default function Home() {
     // Fetch data from the API on component mount
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/api/home");
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/home`);
         setCategories(response.data.data); // Set categories from API response
         setLoading(false);
       } catch (error) {
