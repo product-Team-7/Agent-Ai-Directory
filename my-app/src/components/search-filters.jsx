@@ -43,7 +43,7 @@ export function SearchFilters() {
       <input
     type="text"
     placeholder="Search"
-    className="w-full h-12 pl-4 pr-12 bg-black/40 border border-white/10 text-gray-300 placeholder:text-gray-500 text-lg rounded-xl focus:outline-none focus:ring-1 focus:ring-white/20"
+    className=" font-medium w-full h-12 pl-4 pr-12 bg-black/40 border border-gray-700 text-gray-300 placeholder:text-gray-500 text-lg rounded-xl focus:outline-none focus:ring-1 focus:ring-white/20"
     onFocus={handleInputFocus}
     onBlur={handleInputBlur}
   />

@@ -84,8 +84,9 @@ export default function Home() {
 
       <div className="container mx-auto px-4 mb-20">
         <InfiniteScroll />
-        <div className="flex flex-wrap justify-between items-center gap-5 mb-10 p-10">
-          <div className="flex-1 min-w-[200px]">
+
+<div className="flex justify-between gap-5 mb-5">
+          <div className="flex-1 min-w-[200px] flex flex-wrap">
             <SearchFilters onSearch={setSearchTerm} />
           </div>
           <div className="flex-1 min-w-[200px]">
@@ -97,7 +98,7 @@ export default function Home() {
           <div className="flex-1 min-w-[200px]">
             <SortFilter onSortChange={setSortFilter} />
           </div>
-        </div>
+          </div>
 
         {loading ? (
           <div className="flex justify-center items-center h-64">
