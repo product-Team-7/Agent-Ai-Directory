@@ -92,6 +92,12 @@ html {
   overflow: hidden;
   min-height: 250px;
 }
+.hero3-background {
+  position: relative;
+  background-color: black;
+  overflow: hidden;
+  min-height: 80px;
+}
 .grid-perspective {
   position: absolute;
   inset: 0;
