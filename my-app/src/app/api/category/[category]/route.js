@@ -15,15 +15,16 @@ export async function GET(req, { params }) {
     const skip = (page - 1) * limit;
 
     // Fetch tools in the specified category with pagination
-    const tools = await AiTool.find({ category }).skip(skip).limit(limit);
-    // const total = await AiTool.countDocuments({ category });
+    const tools = await AiTool.find({ category })
+    .skip(skip).limit(limit);
+    const total = await AiTool.countDocuments({ category });
 
     if (!tools.length) {
       return NextResponse.json({ error: "No tools found in this category" }, { status: 404 });
     }
 
     return NextResponse.json({
-      // total,
+      total,
       // page,
       // limit,
       tools

@@ -15,7 +15,7 @@ export default function MarketingPage({ params }) {
     const fetchData = async () => {
       try {
         const { category } = await params // Destructure category from params
-        const res = await fetch(`${process.env.LOCALHOST_URI}/api/category/${category}`)
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/category/${category}`)
         const data = await res.json()
 
         if (res.ok) {
