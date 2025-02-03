@@ -174,66 +174,28 @@ export default function Home() {
   const [sortFilter, setSortFilter] = useState("popular")
 
   useEffect(() => {
-    fetchData()
-  }, []) // Only refetch data when the component mounts
+    // Fetch data from the API on component mount
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/home`);
+        setCategories(response.data.data); // Set categories from API response
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setLoading(false);
+      }
+    };
 
-  const fetchData = async () => {
-    setLoading(true)
-    try {
-      const response = await axios.get("http://localhost:3000/api/home", {
-        params: {
-          search: searchTerm,
-          pricing: pricingFilter,
-          access: accessFilter,
-          sort: sortFilter,
-        },
-      })
-      setCategories(response.data.data)
-      setLoading(false)
-    } catch (error) {
-      console.error("Error fetching data:", error)
-      setLoading(false)
-    }
-  }
+    fetchData();
+  }, []);
 
-  useEffect(() => {
-    if (!loading) {
-      animateElements()
-    }
-  }, [loading])
+  // Load more categories when "And Many More" button is clicked
+  const loadMoreCategories = () => {
+    setVisibleCategories(prev => prev + 3);
+  };
 
-  const animateElements = () => {
-    gsap.utils.toArray(".category-section").forEach((section, index) => {
-      gsap.from(section, {
-        opacity: 0,
-        y: 50,
-        duration: 0.8,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: section,
-          start: "top bottom-=100",
-          toggleActions: "play none none reverse",
-        },
-      })
-    })
-
-    gsap.utils.toArray(".tool-card").forEach((card, index) => {
-      gsap.from(card, {
-        opacity: 0,
-        y: 30,
-        duration: 0.6,
-        delay: index * 0.1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: card,
-          start: "top bottom-=50",
-          toggleActions: "play none none reverse",
-        },
-      })
-    })
-  }
-
-  const visibleCategoryKeys = Object.keys(categories).slice(0, visibleCategories)
+  // Slice the categories array to show only the visible categories
+  const visibleCategoryKeys = Object.keys(categories).slice(0, visibleCategories);
 
   return (
     <div className="min-h-screen bg-black" ref={containerRef}>
@@ -302,4 +264,3 @@ export default function Home() {
     </div>
   )
 }
-

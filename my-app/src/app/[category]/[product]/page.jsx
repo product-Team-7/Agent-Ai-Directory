@@ -2,7 +2,7 @@ import { notFound } from "next/navigation"
 import ProductDetails from "./ProductDetails"
 
 async function getProductData(category, product) {
-  const res = await fetch(`http://localhost:3000/api/category/${category}/${product}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/category/${category}/${product}`, {
     cache: "no-store",
   })
 
