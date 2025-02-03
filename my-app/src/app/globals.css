@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Font families */
 @layer base {
   @font-face {
@@ -88,7 +92,6 @@
   overflow: hidden;
   min-height: 250px;
 }
-
 .grid-perspective {
   position: absolute;
   inset: 0;
@@ -134,6 +137,7 @@
   top: 50%;
   background: radial-gradient(circle, rgba(46, 255, 213, 0.8) 0%, rgba(46, 255, 213, 0) 70%);
 }
+
 .gradient-overlay {
   position: absolute;
   inset: 0; /* Covers the entire parent container */
@@ -155,6 +159,7 @@
   background-repeat: no-repeat;
   pointer-events: none;
 }
+ 
 
 .diagonal-lines {
   position: absolute;
@@ -164,9 +169,15 @@
 }
 
 .glass-card {
-  background: var(--card-bg);
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .search-input {
@@ -194,5 +205,106 @@
   border-radius: 4px;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.6);
+}
+
+/* Add these new styles */
+.prose {
+  color: rgb(255 255 255 / 0.8);
+  max-width: 65ch;
+  line-height: 1.75;
+}
+
+.prose p {
+  margin-bottom: 1.25em;
+}
+
+.prose h1,
+.prose h2,
+.prose h3 {
+  color: white;
+  font-weight: 600;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+/* Add hover effects */
+.group:hover .group-hover\:text-\[\#2EFFD5\] {
+  color: #2effd5;
+}
+
+@media (max-width: 640px) {
+  .prose {
+    font-size: 0.9375rem;
+  }
+}
+
+/* New styles for the product details page */
+.aspect-w-16 {
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.aspect-h-9 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.list-disc {
+  list-style-type: disc;
+  padding-left: 1.5em;
+}
+
+.list-inside {
+  list-style-position: inside;
+}
+
+/* Add these new styles at the end of the file */
+
+.bg-gradient {
+  background: linear-gradient(45deg, #000000, #1a1a1a, #2b2b2b, #1a1a1a, #000000);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#scroll-container {
+  will-change: transform;
+}
+
+.tool-card {
+  transition: transform 0.3s ease-out;
 }
 

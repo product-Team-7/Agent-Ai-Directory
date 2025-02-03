@@ -15,7 +15,7 @@ export default function MarketingPage({ params }) {
     const fetchData = async () => {
       try {
         const { category } = await params // Destructure category from params
-        const res = await fetch(`http://localhost:3001/api/category/${category}`)
+        const res = await fetch(`http://localhost:3000/api/category/${category}`)
         const data = await res.json()
 
         if (res.ok) {
@@ -127,12 +127,6 @@ export default function MarketingPage({ params }) {
           ) : (
             <div>No tools available for this category</div>
           )}
-        </div>
-
-        <div className="flex justify-center">
-          <button className="w-full sm:w-auto px-6 py-3 rounded-lg bg-white hover:bg-white/90 text-black font-semibold transition-colors">
-            And Many More
-          </button>
         </div>
       </main>
     </div>
