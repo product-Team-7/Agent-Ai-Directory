@@ -35,10 +35,12 @@ export function Navbar() {
             <CircleArrowLeft className="h-4 w-4 text-white" />
             <span className="text-white text-sm">Sign In</span>
           </button> */}
+         <Link  href="/submit">
           <button className="flex items-center gap-2 px-3 py-2 rounded-lg border border-white/10 bg-black hover:bg-white/5 transition-colors mr-5">
             <Sparkles className="h-4 w-4 text-white" />
-            <span className="text-white text-sm ">Submit AI Tool</span>
+            <span className="text-white text-md ">Submit AI Tool</span>
           </button>
+          </Link>
         </div>
       </div>
     </header>
