@@ -11,7 +11,7 @@ export function ToolCard({ name, category, pricingModel, websiteUrl, tagline, lo
       <CardBody className="w-full [transform-style:preserve-3d]">
         <CardItem
           translateZ="0"
-          className="w-full relative overflow-hidden rounded-xl border border-white/[0.08] bg-black transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1 hover:border-primary/30"
+          className="w-full relative overflow-hidden rounded-xl border border-white/[0.2] bg-black transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1 hover:border-primary/30"
         >
           <Link href={`/${category}/${name}`} passHref>
             <div className="relative p-6 pb-1 bg-white/5 backdrop-blur-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-white/10">
