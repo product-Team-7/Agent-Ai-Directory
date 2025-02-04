@@ -5,23 +5,24 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "res.cloudinary.com",
-        pathname: "/dxzidv0lk/image/upload/**", // Match specific paths
+        pathname: "/dxzidv0lk/image/upload/**",
       },
     ],
   },
   async headers() {
     return [
       {
-        source: '/:path*',
+        source: "/api/:path*",
         headers: [
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
-          },
+          { key: "Access-Control-Allow-Credentials", value: "true" },
+          { key: "Access-Control-Allow-Origin", value: "*" }, // Update this to your specific domain in production
+          { key: "Access-Control-Allow-Methods", value: "GET,POST,PUT,DELETE,OPTIONS" },
+          { key: "Access-Control-Allow-Headers", value: "Content-Type, Authorization" },
         ],
       },
-    ];
+    ]
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig
+
