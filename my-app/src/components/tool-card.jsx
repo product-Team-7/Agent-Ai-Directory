@@ -62,7 +62,7 @@ export function ToolCard({ name, category, pricingModel, websiteUrl, tagline, lo
                 href={websiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-36 py-6 flex-1 hover:bg-white/10 text-white text-base transition-colors border-r border-white/[0.08] hover:text-primary"
+                className="flex items-center justify-center gap-2 p-32 py-6 flex-1 hover:bg-white/10 text-white text-base transition-colors border-r border-white/[0.08] hover:text-primary"
               >
                 <span>Visit</span>
                 <ExternalLink className="h-4 w-4" />
@@ -70,7 +70,7 @@ export function ToolCard({ name, category, pricingModel, websiteUrl, tagline, lo
               <CardItem
                 translateZ="30"
                 as="button"
-                className="p-7 hover:bg-white/10 text-white/40 hover:text-primary transition-colors"
+                className="px-12 hover:bg-white/10 text-white/40 hover:text-primary transition-colors"
               >
                 <Heart className="h-6 w-6" />
               </CardItem>

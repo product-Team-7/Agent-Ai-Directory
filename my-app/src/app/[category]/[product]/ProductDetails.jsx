@@ -240,7 +240,7 @@ export default function ProductDetails({ productData }) {
         </div>
         <h2 className="text-2xl font-bold text-white mb-10 mt-10">Similar Tools</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mb-10">
 
 {similarTools.length > 0 ? (
   similarTools.map((tool, index) => (

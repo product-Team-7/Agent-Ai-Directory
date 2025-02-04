@@ -11,7 +11,7 @@ export async function GET(req, { params }) {
     const { accessModel } =await params
 
     // Validate pricing model input
-    const validAccessModels = ["open source", "close source", "API"]
+    const validAccessModels = ["Open Source", "Close Source", "API"]
     if (!validAccessModels.includes(accessModel)) {
       return NextResponse.json({ error: "Invalid pricing model" }, { status: 400 })
     }

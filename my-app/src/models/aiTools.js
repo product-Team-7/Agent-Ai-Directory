@@ -5,7 +5,7 @@ const AiToolSchema = new mongoose.Schema(
     name: { type: String, required: true, unique: true },
     category: { type: String, required: true },
     industry: { type: String, required: true },
-    accessModel: { type: String, required: true, enum: ["open source", "close source", "API"] },
+    accessModel: { type: String, required: true, enum: ["Open Source", "Close Source", "API"] },
     pricingModel: { type: String, required: true, enum: ["Free", "Paid", "Freemium"] },
     websiteUrl: { type: String },
     linkedin: { type: String },
