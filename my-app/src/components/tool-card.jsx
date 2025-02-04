@@ -81,4 +81,3 @@ export function ToolCard({ name, category, pricingModel, websiteUrl, tagline, lo
     </CardContainer>
   )
 }
-
