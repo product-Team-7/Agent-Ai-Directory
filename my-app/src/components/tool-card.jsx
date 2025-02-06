@@ -47,7 +47,9 @@ export function ToolCard({ name, category, pricingModel, websiteUrl, tagline, lo
             <div className="relative p-6 bg-white/5 backdrop-blur-sm cursor-pointer transition-colors duration-300 ease-in-out hover:bg-white/10">
               <div className="flex items-start justify-between mb-6">
                 <CardItem translateZ="30" className="flex items-center gap-3">
-                  <img src={logo || "/placeholder.svg"} alt={name} className="w-12 h-12 rounded-xl object-cover" />
+                {logo && (
+                    <img src={logo} alt={name} className="w-12 h-12 rounded-xl object-cover" />
+                  )}
                   <h3 className="text-white text-xl font-semibold">{name}</h3>
                 </CardItem>
                 <CardItem translateZ="20">
