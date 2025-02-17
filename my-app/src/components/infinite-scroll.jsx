@@ -297,14 +297,6 @@ export default function InfiniteScroll({
                   alt={item.name}
                   className="w-12 h-12 rounded-full border border-gray-400"
                 />
-                <div className="flex flex-col">
-                  <span className="text-sm leading-[1.6] text-gray-100 font-normal">
-                    {item.name}
-                  </span>
-                  <span className="text-sm leading-[1.6] text-gray-400 font-normal">
-                    {item.title}
-                  </span>
-                </div>
               </div>
             </blockquote>
           </li>

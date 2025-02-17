@@ -19,25 +19,13 @@ export async function GET(req) {
     // const total = await AiTool.countDocuments();
 
     return NextResponse.json({
-    //   total,
-    //   page,
-    //   limit,
+      //   total,
+      //   page,
+      //   limit,
       tools
     }, { status: 200 });
 
   } catch (error) {
     return NextResponse.json({ error: "Failed to fetch AI Tools" }, { status: 500 });
-  }
-}
-
-
-export async function POST(req) {
-  await dbConnect();
-  try {
-    const data = await req.json();
-    const newTool = await AiTool.create(data);
-    return NextResponse.json(newTool, { status: 201 });
-  } catch (error) {
-    return NextResponse.json({ error: "Failed to create AI Tool" }, { status: 400 });
   }
 }
