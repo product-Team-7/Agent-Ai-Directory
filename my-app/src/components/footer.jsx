@@ -82,7 +82,7 @@ export function Footer() {
           </div>
 
           <p className="text-white/40 text-center">
-            ©2024 All Rights Get by Lorem
+            ©2025 Agent AI Lab
           </p>
         </div>
       </div>
