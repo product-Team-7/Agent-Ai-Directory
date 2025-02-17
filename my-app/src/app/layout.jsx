@@ -98,6 +98,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+        <link rel="icon" href="/favicon.ico.png" sizes="any" />
       </head>
       <body className="font-suisse-regular min-h-screen bg-black relative">
         <div className="bg-gradient absolute inset-0 opacity-20 pointer-events-none"></div>

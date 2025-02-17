@@ -17,7 +17,7 @@ const glassCardStyle = "bg-white/5 backdrop-blur-xl border border-white/10"
 export default function ProductDetails({ productData }) {
   const [similarTools, setSimilarTools] = useState([])  // State for similar tools
   const [loading, setLoading] = useState(true)  // Loading state for similar tools
-
+  const [featuredTools, setFeaturedTools] = useState([])
   useEffect(() => {
     const fetchSimilarTools = async () => {
       try {
@@ -43,28 +43,20 @@ export default function ProductDetails({ productData }) {
     fetchSimilarTools();
   }, [productData.category, productData.name]);
 
-  const featuredTools = [
-    {
-      name: "Memon",
-      logo: "/placeholder.svg?height=40&width=40",
-    },
-    {
-      name: "Topicmojo",
-      logo: "/placeholder.svg?height=40&width=40",
-    },
-    {
-      name: "Artical Fiesta",
-      logo: "/placeholder.svg?height=40&width=40",
-    },
-    {
-      name: "Content Company",
-      logo: "/placeholder.svg?height=40&width=40",
-    },
-    {
-      name: "Thundercontent",
-      logo: "/placeholder.svg?height=40&width=40",
-    },
-  ]
+  useEffect(() => {
+    const fetchFeaturedTools = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tools/promotion`);
+        const data = await response.json();
+        if (Array.isArray(data)) {
+          setFeaturedTools(data);
+        }
+      } catch (error) {
+        console.error("Error fetching AI tools:", error);
+      }
+    };
+    fetchFeaturedTools();
+  }, []);
 
   return (
     <div className="min-h-screen bg-black bg-gradient-to-br from-purple-500/5 via-black to-emerald-500/5">
@@ -198,22 +190,21 @@ export default function ProductDetails({ productData }) {
     <div className="w-full lg:w-80 space-y-6">
                  {/* Featured AI Tools */}
                  <div className={`${glassCardStyle} rounded-xl p-4 sm:p-6`}>
-                   <h3 className="text-lg font-bold text-white mb-4">Featured AI Tools</h3>
-                   <div className="space-y-3">
-                     {featuredTools.map((tool) => (
-                      <div
-                         key={tool.name}
-                         className="flex items-center justify-between group cursor-pointer p-2 -mx-2 rounded-lg hover:bg-white/10 transition-all"
-                       >
-                         <div className="flex items-center gap-3">
-                           <img src={tool.logo || "/placeholder.svg"} alt={tool.name} className="w-8 h-8 rounded-lg" />
-                           <span className="text-white group-hover:text-[#2EFFD5] transition-colors">{tool.name}</span>
-                         </div>
-                         <ExternalLink className="w-4 h-4 text-white/40 group-hover:text-[#2EFFD5] transition-colors" />
-                       </div>
-                    ))}
-                   </div>
-                 </div>
+            <h2 className="text-xl font-bold text-white mb-3">Featured AI Tools</h2>
+            <div className="grid gap-4">
+              {featuredTools.length > 0 ? (
+                featuredTools.map((tool) => (
+                  <Link key={tool._id} href={tool.websiteUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/10 transition">
+                    <Image src={tool.logo} alt={tool.name} width={40} height={40} className="rounded-lg" />
+                    <span className="text-white">{tool.name}</span>
+                    <ExternalLink className="w-4 h-4 text-white/60" />
+                  </Link>
+                ))
+              ) : (
+                <p className="text-white/60">No featured tools available.</p>
+              )}
+            </div>
+          </div>
 
                  {/* AI Tools Category */}
                 <div className={`${glassCardStyle} rounded-xl p-4 sm:p-6`}>
@@ -240,7 +231,7 @@ export default function ProductDetails({ productData }) {
         </div>
         <h2 className="text-2xl font-bold text-white mb-10 mt-10">Similar Tools</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mb-10">
 
 {similarTools.length > 0 ? (
   similarTools.map((tool, index) => (
