@@ -21,28 +21,22 @@ export function Footer() {
 
           <nav className="flex flex-wrap justify-center md:justify-end gap-8">
             <Link
-              href="/home"
+              href="/"
               className="text-white/70 hover:text-white transition-colors"
             >
               Home
             </Link>
             <Link
-              href="/about-us"
+              href="/about"
               className="text-white/70 hover:text-white transition-colors"
             >
               About Us
             </Link>
             <Link
-              href="/contact-us"
+              href="/contact"
               className="text-white/70 hover:text-white transition-colors"
             >
               Contact Us
-            </Link>
-            <Link
-              href="/ai-news"
-              className="text-white/70 hover:text-white transition-colors"
-            >
-              AI News
             </Link>
           </nav>
 
@@ -81,9 +75,7 @@ export function Footer() {
             </Link>
           </div>
 
-          <p className="text-white/40 text-center">
-            ©2025 Agent AI Lab
-          </p>
+          <p className="text-white/40 text-center">©2025 Agent AI Lab</p>
         </div>
       </div>
     </footer>
